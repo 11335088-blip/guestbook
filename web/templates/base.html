@@ -10,15 +10,11 @@
     <a href="{% url 'msg_create' %}">新增留言</a>
     {% if user.is_authenticated %}
       <form action="{% url 'logout' %}" method="post" style="display:inline;">
-        {% csrf_token %}
-        <button type="submit">登出</button>
+         {% csrf_token %}
+         <button type="submit">登出</button>
       </form>
     {% else %}
-      <form action="{% url 'logout' %}" method="post" style="display:inline;">
-        {% csrf_token %}
-        <button type="{% url 'login' %}">登入</button>
-      </form>
-      
+      <a href="{% url 'login' %}">登入</a>
     {% endif %}
   </div>
   <div>
